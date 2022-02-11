@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text RPG</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    ul {
+      margin: 30px 0;
+      padding: 0 0 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <h3>클래스 문법을 활용한 Text RPG GAME</h3>
+  <ul>
+    <li>게임은 크게 2가지 모드로 나뉜다.</li>
+    <li>일반모드: 모험, 휴식, 종료 중 선택</li>
+    <li>전투모드: 모험을 떠나서 적을 만나게 될 때 돌입</li>
+    <span>( *전투모드에서는 적을 공격하거나 체력을 회복하거나 도망간다. )</span>
+  </ul>
+
+  <form id="start-screen">
+    <input id="name-input" placeholder="주인공 이름을 입력하세요!" required autocomplete="off"/>
+    <button id="start">시작</button>
+  </form>
+  <div id="screen">
+    <!-- 캐릭터 상태 -->
+    <div id="hero-stat">
+      <span id="hero-name"></span>
+      <span id="hero-level"></span>
+      <span id="hero-hp"></span>
+      <span id="hero-xp"></span>
+      <span id="hero-att"></span>
+    </div>
+    <!-- 일반메뉴 -->
+    <form id="game-menu" style="display: none;">
+      <div id="menu-1">1. 모험</div>
+      <div id="menu-2">2. 휴식</div>
+      <div id="menu-3">3. 종료</div>
+      <input id="menu-input" />
+      <button id="menu-button">입력</button>
+    </form>
+    <!-- 전투메뉴 -->
+    <form id="battle-menu" style="display: none;">
+      <div id="battle-1">1. 공격</div>
+      <div id="battle-2">2. 회복</div>
+      <div id="battle-3">3. 도망</div>
+      <input id="battle-input" />
+      <button id="battle-button">입력</button>
+    </form>
+    <!-- 캐릭터와 적의 상호작용을 나타냄 -->
+    <div id="message"></div>
+    <!-- 적 상태 -->
+    <div id="monster-stat">
+      <span id="monster-name"></span>
+      <span id="monster-hp"></span>
+      <span id="monster-att"></span>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
