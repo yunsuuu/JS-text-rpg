@@ -1,5 +1,3 @@
-// 클래스 속성 적용 전 JS
-
 const $startScreen = document.querySelector('#start-screen');
 const $gameMenu = document.querySelector('#game-menu'); // 일반메뉴
 const $battleMenu = document.querySelector('#battle-menu'); // 전투메뉴
@@ -22,9 +20,11 @@ const hero = {
   att: 10, // 공격력
   attack: function(monster){ 
     // this가 화살표 함수 내부에 있을 땐 this = window
-    // this 사용할 때는 화살표 함수 사용 X
     // window = 브라우저 전체를 담당하는 객체
-    monster.hp -= this.att; // 객체 내부 this는 객체 자신을 가리킴(this = hero)
+    // 화살표 함수가 아닌 function 일 때만 this가 제대로 작동(객체를 가리킴)
+    monster.hp -= this.att; 
+    // 객체 안에서 this는 객체 자신을 가리킴(this = hero)
+    // 단, 객체.메서드를 했을 때만 this = 객체 자신
     this.hp -= monster.att;
   },
   heal: function(monster){
