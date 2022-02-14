@@ -19,6 +19,10 @@
       margin: 30px 0;
       padding: 0 0 0 20px;
     }
+    
+    form {
+      margin: 12px;
+    }
   </style>
 </head>
 <body>
@@ -26,8 +30,8 @@
   <ul>
     <li>게임은 크게 2가지 모드로 나뉜다.</li>
     <li>일반모드: 모험, 휴식, 종료 중 선택</li>
-    <li>전투모드: 모험을 떠나서 적을 만나게 될 때 돌입</li>
-    <span>( *전투모드에서는 적을 공격하거나 체력을 회복하거나 도망간다. )</span>
+    <li>전투모드: 공격, 회복, 도망 중 선택</li>
+    <span>( *일반모드에서 모험을 선택한 경우 전투모드가 실행 )</span>
   </ul>
 
   <form id="start-screen">
@@ -44,7 +48,7 @@
       <span id="hero-att"></span>
     </div>
     <!-- 일반메뉴 -->
-    <form id="game-menu" style="display: none;">
+    <form id="game-menu" style="display: none;" required autocomplete="off">
       <div id="menu-1">1. 모험</div>
       <div id="menu-2">2. 휴식</div>
       <div id="menu-3">3. 종료</div>
@@ -52,7 +56,7 @@
       <button id="menu-button">입력</button>
     </form>
     <!-- 전투메뉴 -->
-    <form id="battle-menu" style="display: none;">
+    <form id="battle-menu" style="display: none;" required autocomplete="off">
       <div id="battle-1">1. 공격</div>
       <div id="battle-2">2. 회복</div>
       <div id="battle-3">3. 도망</div>
